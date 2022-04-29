@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.amber.shade500),
-      home: HomeScreen(),
+      theme: ThemeData(primaryColor: Colors.cyanAccent),
+      home: ScreenHome(),
     );
   }
 }
@@ -112,5 +112,43 @@ class HomeScreen extends StatelessWidget {
             )
           ],
         )));
+  }
+}
+
+class ScreenHome extends StatelessWidget {
+  ScreenHome({Key? key}) : super(key: key);
+
+  final _textController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 20,
+            right: 40,
+            bottom: 20,
+            top: 50,
+          ),
+          child: Container(
+            color: Colors.yellow[300],
+            child: Column(
+              children: [
+                TextField(
+                  controller: _textController,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Type Some Thing'),
+                ),
+                ElevatedButton(onPressed: () {
+                  print(_textController.text);
+                }, child: Text('Click Here')),
+                Text('Data will be show here')
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
