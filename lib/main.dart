@@ -24,13 +24,14 @@ final String name ="headding";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.white12,
         //appBar: AppBar(),
         body: SafeArea(
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              child: Text(
+              child: Column(children: [
+                Text(
                 name,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -38,6 +39,11 @@ final String name ="headding";
                     fontSize: 50,
                     fontWeight: FontWeight.bold),
               ),
+              TextButton(onPressed: (){
+
+              }, child: Text('Click Me'),
+              )
+              ],)
             )));
   }
 }
