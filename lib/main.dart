@@ -115,10 +115,18 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class ScreenHome extends StatelessWidget {
+class ScreenHome extends StatefulWidget {
   ScreenHome({Key? key}) : super(key: key);
 
+  @override
+  State<ScreenHome> createState() => _ScreenHomeState();
+}
+
+class _ScreenHomeState extends State<ScreenHome> {
   final _textController = TextEditingController();
+
+  String _textofTV ='text will display here';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,19 +139,24 @@ class ScreenHome extends StatelessWidget {
             top: 50,
           ),
           child: Container(
-            color: Colors.yellow[300],
+            color: Colors.yellow[400],
             child: Column(
               children: [
                 TextField(
                   controller: _textController,
+                
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Type Some Thing'),
                 ),
                 ElevatedButton(onPressed: () {
                   print(_textController.text);
+                  setState(() {
+                    _textofTV =_textController.text;
+
+                  });
                 }, child: Text('Click Here')),
-                Text('Data will be show here')
+                Text(_textofTV),
               ],
             ),
           ),
