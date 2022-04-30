@@ -186,7 +186,8 @@ class ListViewSanple extends StatelessWidget {
             leading: CircleAvatar(
               radius: 30,
               backgroundColor : Colors.black45 ,
-              backgroundImage: NetworkImage('https://www.cloudways.com/blog/wp-content/uploads/wordpress-lazy-load.jpg'),
+              //backgroundImage: NetworkImage('https://www.cloudways.com/blog/wp-content/uploads/wordpress-lazy-load.jpg'),
+            backgroundImage: AssetImage('assets/images/happy_meal_small.png'),
             ),
             trailing: Text('$index:00 PM'),
           );
