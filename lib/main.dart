@@ -178,19 +178,14 @@ class ListViewSanple extends StatelessWidget {
         title: const Text('Listview Sample Project'),
       ),
       body: SafeArea(
-          child: ListView(
-        children: List.generate(100, (index) {
-          return Column(
-            children: [
-              Text('Text $index'),
-              Divider(
-                height: 20,
-                thickness: 10,
-                color: Colors.lightBlue,
-              )
-            ],
-          );
-        }),
+          child: ListView.separated(
+        itemBuilder: (ctx, index) {
+          return Text('Text $index');
+        },
+        separatorBuilder: (ctx, index) {
+          return Text('seperateer');
+        },
+        itemCount: 50,
       )),
     );
   }
