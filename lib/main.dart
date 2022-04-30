@@ -180,12 +180,21 @@ class ListViewSanple extends StatelessWidget {
       body: SafeArea(
           child: ListView.separated(
         itemBuilder: (ctx, index) {
-          return Text('Text $index');
+          return ListTile(
+            title: Text('PersoN $index'),
+            subtitle: Text('Message $index'),
+            leading: CircleAvatar(
+              radius: 30,
+              backgroundColor : Colors.black45 ,
+              backgroundImage: NetworkImage('https://www.cloudways.com/blog/wp-content/uploads/wordpress-lazy-load.jpg'),
+            ),
+            trailing: Text('$index:00 PM'),
+          );
         },
         separatorBuilder: (ctx, index) {
-          return Text('seperateer');
+          return Divider();
         },
-        itemCount: 50,
+        itemCount: 30,
       )),
     );
   }
