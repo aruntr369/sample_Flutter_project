@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
-      home: ScreenHome2(),
+      home: ListViewSanple(),
     );
   }
 }
@@ -126,7 +126,7 @@ class ScreenHome extends StatefulWidget {
 class _ScreenHomeState extends State<ScreenHome> {
   final _textController = TextEditingController();
 
-  String _textofTV ='text will display here';
+  String _textofTV = 'text will display here';
 
   @override
   Widget build(BuildContext context) {
@@ -145,24 +145,53 @@ class _ScreenHomeState extends State<ScreenHome> {
               children: [
                 TextField(
                   controller: _textController,
-                
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Type Some Thing'),
                 ),
-                ElevatedButton(onPressed: () {
-                  print(_textController.text);
-                  setState(() {
-                    _textofTV =_textController.text;
-
-                  });
-                }, child: Text('Click Here')),
+                ElevatedButton(
+                    onPressed: () {
+                      print(_textController.text);
+                      setState(() {
+                        _textofTV = _textController.text;
+                      });
+                    },
+                    child: Text('Click Here')),
                 Text(_textofTV),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+//forListview
+class ListViewSanple extends StatelessWidget {
+  const ListViewSanple({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Listview Sample Project'),
+      ),
+      body: SafeArea(
+          child: ListView(
+        children: List.generate(100, (index) {
+          return Column(
+            children: [
+              Text('Text $index'),
+              Divider(
+                height: 20,
+                thickness: 10,
+                color: Colors.lightBlue,
+              )
+            ],
+          );
+        }),
+      )),
     );
   }
 }
