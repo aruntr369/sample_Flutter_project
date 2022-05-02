@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sample_project_2/screen_1.dart';
 import 'package:sample_project_2/screen_2.dart';
 import 'package:sample_project_2/screen_home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+Future main() async {
   runApp(MyApp());
 }
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
