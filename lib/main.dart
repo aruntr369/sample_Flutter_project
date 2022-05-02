@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
       home: ScreenOne(),
-      routes: {
-        'screen1':(ctx) => ScreenOne(),
-        "screen_2":(ctx) {
-          return ScreenTwo();
-        }
-      },
+      // routes: {
+      //   'screen1':(ctx) => ScreenOne(),
+      //   "screen_2":(ctx) {
+      //     return ScreenTwo();
+      //   }
+      // },
     );
   }
 }

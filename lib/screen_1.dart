@@ -8,19 +8,16 @@ class ScreenOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Text('Screen 1'),
-            ElevatedButton(
-                onPressed: () {
-                  // Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-                  //   return ScreenTwo();
-                  // }));
-
-                  Navigator.of(context).pushNamed('screen_2');
-                },
-                child: Text('Go to Screen 2'))
-          ],
+        child: ListView.separated(
+          itemBuilder: ((context, index) => ListTile(title: Text('Person $index'),
+          onTap: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return ScreenTwo(name:'Person $index');
+            }));
+          },)),
+          separatorBuilder: (ctx,index)=> Divider()
+          ,
+          itemCount: 30,
         ),
       ),
     );
