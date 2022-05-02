@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sample_project_2/screen_1.dart';
+import 'package:sample_project_2/screen_2.dart';
 import 'package:sample_project_2/screen_home.dart';
 
 void main() {
@@ -11,8 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: ListViewSanple(),
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: ScreenOne(),
+      routes: {
+        'screen1':(ctx) => ScreenOne(),
+        "screen_2":(ctx) {
+          return ScreenTwo();
+        }
+      },
     );
   }
 }
@@ -185,9 +193,9 @@ class ListViewSanple extends StatelessWidget {
             subtitle: Text('Message $index'),
             leading: CircleAvatar(
               radius: 30,
-              backgroundColor : Colors.black45 ,
+              backgroundColor: Colors.black45,
               //backgroundImage: NetworkImage('https://www.cloudways.com/blog/wp-content/uploads/wordpress-lazy-load.jpg'),
-            backgroundImage: AssetImage('assets/images/happy_meal_small.png'),
+              backgroundImage: AssetImage('assets/images/happy_meal_small.png'),
             ),
             trailing: Text('$index:00 PM'),
           );
