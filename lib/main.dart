@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sample_project_2/screen_1.dart';
 import 'package:sample_project_2/screen_2.dart';
 import 'package:sample_project_2/screen_home.dart';
+import 'package:sample_project_2/screens/splash.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future main() async {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: ScreenOne(),
+      home: ScreenSplash(),
       // routes: {
       //   'screen1':(ctx) => ScreenOne(),
       //   "screen_2":(ctx) {
